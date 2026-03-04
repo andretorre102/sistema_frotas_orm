@@ -1,0 +1,11 @@
+# Arquivos de configuração
+.env
+
+# Arquivos de cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Diretórios de ambiente virtual
+venv/
+env/
