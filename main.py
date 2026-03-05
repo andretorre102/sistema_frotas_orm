@@ -70,7 +70,7 @@ def consultar_abastecimentos_por_marca(session, marca_desejada):
     if not abastecimentos:
         print("Nenhum abastecimento encontrado para esta marca.")
     for abs in abastecimentos:
-        print(f"Data: {abs.data_abastecimento} | {abs.tipo_combustivel}: {abs.litros}L | Total: R$ {abs.valor:.2f}")
+        print(f"Veículo: {abs.veiculo.modelo} | Placa: {abs.veiculo.placa} | Data: {abs.data_abastecimento} | {abs.tipo_combustivel}: {abs.litros}L | Total: R$ {abs.valor:.2f}")
 
 # 4.3. Consulta de Viagens Longas Concluídas
 def consultar_viagens_longas_concluidas(session):
