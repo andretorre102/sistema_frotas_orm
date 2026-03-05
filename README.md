@@ -49,7 +49,7 @@ Abra o terminal na pasta do projeto, ative seu ambiente virtual `venv`se for o c
 ![alt text](<4.1 Manutenção por veículos.jpg>)
 
 ## Consulta abastecimentos por marca de veículo (JOIN envolvendo as tabelas `veiculo` e `abastecimento`)
-![alt text](<4.2 Abastecimentos por data.jpg>)
+![alt text](<4.2 Abastecimentos por data2.jpg>)
 
 ## Consulta listagem de viagens mais longas concluídas (uso de filtro na coluna data_chegada `IS NOT NULL` e ordenação)
 ![alt text](<4.3 Viagens longas concluídas.jpg>)
