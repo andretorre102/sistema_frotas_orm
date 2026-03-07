@@ -53,3 +53,24 @@ Abra o terminal na pasta do projeto, ative seu ambiente virtual `venv`se for o c
 
 ## Consulta listagem de viagens mais longas concluídas (uso de filtro na coluna data_chegada `IS NOT NULL` e ordenação)
 ![alt text](<4.3 Viagens longas concluídas.jpg>)
+
+# APÊNDICE
+## Execução via Docker
+
+Nessa branch, incluímos a infraestrutura pronta para rodar em containeres, garantindo isolamento e facilidade de implantação em qualquer ambiente (inclusive na nuvem).
+
+### Pré requisitos
+Docker e docker-compose instalados.
+
+### Como executar
+
+No terminal, na raiz da pasta do projeto, execute:
+`sudo docker-compose up --build`
+
+O Docker irá baixar as imagens necessárias, inicializar o Banco de dados PostgreSQL e em seguida rodará a aplicação Python
+
+Observação: Para evitar conflitos com portas locais, o banco de dados do container está mapeado para a porta `5433` da máquina hospedeira, mas se comunica pela porta padrão `5432`.
+
+
+
+
