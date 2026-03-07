@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: frota_db
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      # Cria um disco virtual para não perder os dados se o contêiner desligar
+      - pgdata:/var/lib/postgresql/data
+      # Lê o script e monta as tabelas automaticamente na primeira inicialização
+      - ./script_banco.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build: .
+    container_name: frota_app
+    depends_on:
+      - db
+    env_file:
+      - .env
+    # Pausa de 5 segundos para o banco de dados ter tempo de rodar o script SQL antes do Python rodar
+    command: sh -c "sleep 5 && python main.py"
+
+volumes:
+  pgdata:
